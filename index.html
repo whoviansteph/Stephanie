@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sock Emporium</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="data:,">
+
+</head>
+<body>
+    <header>
+        <h1>Sock Emporium</h1>
+        <a href="{{ url_for('cart') }}">View Cart</a>
+    </header>
+    <section class="socks">
+        <article class="sock">
+            <img src="{{ url_for('static', filename='sock1.jpg') }}" alt="Sock 1">
+            <h2>Comfort Crew Sock</h2>
+            <p class="price">$10.99</p>
+            <form action="{{ url_for('add_to_cart', sock_id=1) }}" method="post">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+        <article class="sock">
+            <img src="{{ url_for('static', filename='sock2.jpg') }}" alt="Sock 2">
+            <h2>Cozy Stripe Sock</h2>
+            <p class="price">$12.99</p>
+            <form action="{{ url_for('add_to_cart', sock_id=2) }}" method="post">
+                <button type="submit">Add to Cart</button>
+            </form>
+        </article>
+        <!-- Add more sock articles as needed -->
+    </section>
+    <footer>
+        <p>&copy; 2024 Sock Emporium. All rights reserved.</p>
+    </footer>
+</body>
+</html>
